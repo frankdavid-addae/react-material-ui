@@ -1,12 +1,36 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
+import React, { useState } from "react";
+import CustomButton from "../../components/common/custom_button/CustomButton";
+import CustomSnackbar from "../../components/common/custom_snackbar/custom_snackbar";
+import GridWrapper from "../../components/common/grid_wrapper/GridWrapper";
 
 const Storage = () => {
-    return (
-        <Grid item xs={8}>
-            This is storage page.
-        </Grid>
-    )
-}
+  const [open, setOpen] = useState(false);
 
-export default Storage
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  return (
+    <GridWrapper>
+      <CustomButton variant="contained" onClick={handleClick}>
+        Open success snackbar
+      </CustomButton>
+      <CustomSnackbar
+        open={open}
+        onClose={handleClose}
+        severity="error"
+        message="Error message"
+      />
+    </GridWrapper>
+  );
+};
+
+export default Storage;
