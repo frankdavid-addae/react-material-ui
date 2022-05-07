@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Header from "./components/common/header/Header";
 import { useLocation } from "react-router-dom";
+import "@fontsource/roboto";
 
 function App() {
   const [title, setTitle] = useState(null);

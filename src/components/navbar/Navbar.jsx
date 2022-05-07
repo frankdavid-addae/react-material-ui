@@ -8,6 +8,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { mainNavbarItems } from "./consts/navbarItems";
 import { navbarStyles } from "./styles";
+// eslint-disable-next-line no-unused-vars
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
